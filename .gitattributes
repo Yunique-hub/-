@@ -1,0 +1,35 @@
+# 统一换行符与文件类型识别
+# https://git-scm.com/docs/gitattributes
+
+# ---- 默认：文本文件统一用 LF 入库 ----
+* text=auto eol=lf
+
+# ---- Windows 脚本必须保持 CRLF，否则 cmd / 旧版 PowerShell 解析会出问题 ----
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# ---- 二进制 ----
+*.exe binary
+*.dll binary
+*.zip binary
+*.7z binary
+*.gz binary
+*.db binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.xlsx binary
+*.docx binary
+
+# ---- 语言识别 ----
+*.ps1 linguist-language=PowerShell
+*.bat linguist-language=Batchfile
+
+# ---- 文档不计入语言统计 ----
+docs/** linguist-documentation=true
+*.md linguist-documentation=true
